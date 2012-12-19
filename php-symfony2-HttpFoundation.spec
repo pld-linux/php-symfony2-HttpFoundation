@@ -10,7 +10,7 @@ License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
 # Source0-md5:	6b2f86a3a06e120d5b81039808af092f
-URL:		http://pear.symfony.com/package/HttpFoundation/
+URL:		http://symfony.com/doc/current/components/http_foundation/index.html
 BuildRequires:	php-channel(pear.symfony.com)
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
