@@ -4,12 +4,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - Symfony2 HttpFoundation Component
 Name:		php-symfony2-HttpFoundation
-Version:	2.1.4
+Version:	2.1.6
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
-# Source0-md5:	6b2f86a3a06e120d5b81039808af092f
+# Source0-md5:	8b21ceb8cc53978b7976cdc887cfaa79
 URL:		http://symfony.com/doc/current/components/http_foundation/index.html
 BuildRequires:	php-channel(pear.symfony.com)
 BuildRequires:	php-pear-PEAR
