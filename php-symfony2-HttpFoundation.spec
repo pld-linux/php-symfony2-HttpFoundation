@@ -3,19 +3,17 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 HttpFoundation Component
 Name:		php-symfony2-HttpFoundation
-Version:	2.4.4
+Version:	2.4.8
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
-Source0:	http://pear.symfony.com/get/%{pearname}-%{version}.tgz
-# Source0-md5:	6ba1d6328d738a530c6db7d0362e0d09
+Source0:	https://github.com/symfony/%{pearname}/archive/v%{version}/%{pearname}-%{version}.tar.gz
+# Source0-md5:	e62a18fdf1e8d7dc919f6009eebbedad
 URL:		http://symfony.com/doc/current/components/http_foundation/index.html
-BuildRequires:	php-channel(pear.symfony.com)
-BuildRequires:	php-pear-PEAR
+BuildRequires:	phpab
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.610
 Requires:	php(core) >= %{php_min_version}
-Requires:	php-channel(pear.symfony.com)
 Requires:	php-pear >= 4:1.3.10
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -25,27 +23,24 @@ The HttpFoundation Component defines an object-oriented layer for the
 HTTP specification.
 
 %prep
-%pear_package_setup
+%setup -q -n %{pearname}-%{version}
 
-# no packaging of tests
-mv .%{php_pear_dir}/Symfony/Component/%{pearname}/Tests .
-mv .%{php_pear_dir}/Symfony/Component/%{pearname}/phpunit.xml.dist .
-
-# fixups
-mv docs/%{pearname}/Symfony/Component/%{pearname}/* .
+%build
+# add --tolerant, see https://github.com/theseer/Autoload/issues/49
+phpab -n -e '*/Tests/*' -o autoload.php --tolerant .
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}
-%pear_package_install
+install -d $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{pearname}
+cp -a *.php */ $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{pearname}
+rm -r $RPM_BUILD_ROOT%{php_pear_dir}/Symfony/Component/%{pearname}/Tests
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGELOG.md LICENSE README.md install.log
-%{php_pear_dir}/.registry/.channel.*/*.reg
+%doc CHANGELOG.md LICENSE README.md
 %dir %{php_pear_dir}/Symfony/Component/HttpFoundation
 %{php_pear_dir}/Symfony/Component/HttpFoundation/*.php
 %{php_pear_dir}/Symfony/Component/HttpFoundation/File
