@@ -27,7 +27,7 @@ HTTP specification.
 
 %build
 # add --tolerant, see https://github.com/theseer/Autoload/issues/49
-phpab -n -e '*/Tests/*' -o autoload.php --tolerant .
+phpab -n -e '*/Tests/*' -o autoloader.php --tolerant .
 
 %install
 rm -rf $RPM_BUILD_ROOT
