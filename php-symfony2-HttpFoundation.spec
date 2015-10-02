@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 HttpFoundation Component
 Name:		php-symfony2-HttpFoundation
-Version:	2.7.3
+Version:	2.7.5
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	03c0e75712f0535f46a8230cfc606715
+# Source0-md5:	2047d9397e95e6d89e6fcacd008d8322
 URL:		http://symfony.com/doc/current/components/http_foundation/index.html
 BuildRequires:	phpab
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -23,7 +23,7 @@ The HttpFoundation Component defines an object-oriented layer for the
 HTTP specification.
 
 %prep
-%setup -q -n %{package}-%{version}
+%setup -q -n http-foundation-%{version}
 
 %build
 # add --tolerant, see https://github.com/theseer/Autoload/issues/49
