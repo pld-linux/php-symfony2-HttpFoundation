@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 HttpFoundation Component
 Name:		php-symfony2-HttpFoundation
-Version:	2.7.5
+Version:	2.7.7
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	2047d9397e95e6d89e6fcacd008d8322
+# Source0-md5:	fcdab02aa4b31fadd2c75d58b7546549
 URL:		http://symfony.com/doc/current/components/http_foundation/index.html
 BuildRequires:	phpab
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -27,7 +27,7 @@ HTTP specification.
 
 %build
 # add --tolerant, see https://github.com/theseer/Autoload/issues/49
-phpab -n -e '*/Tests/*' -o autoloader.php --tolerant .
+phpab -n -e '*/Tests/*' -o autoload.php --tolerant .
 
 %install
 rm -rf $RPM_BUILD_ROOT
