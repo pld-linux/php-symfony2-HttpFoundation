@@ -13,6 +13,7 @@ URL:		http://symfony.com/doc/current/components/http_foundation/index.html
 BuildRequires:	phpab
 BuildRequires:	rpmbuild(macros) >= 1.610
 Requires:	php(core) >= %{php_min_version}
+Requires:	php-dirs >= 1.6
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
