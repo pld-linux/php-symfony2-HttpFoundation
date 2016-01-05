@@ -3,12 +3,12 @@
 %include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 HttpFoundation Component
 Name:		php-symfony2-HttpFoundation
-Version:	2.7.7
+Version:	2.7.8
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	fcdab02aa4b31fadd2c75d58b7546549
+# Source0-md5:	8362d883d50168b11654cdaa49745d8e
 URL:		http://symfony.com/doc/current/components/http_foundation/index.html
 BuildRequires:	phpab
 BuildRequires:	rpmbuild(macros) >= 1.610
