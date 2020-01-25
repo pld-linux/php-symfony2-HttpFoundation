@@ -1,6 +1,5 @@
 %define		package	HttpFoundation
 %define		php_min_version 5.3.9
-%include	/usr/lib/rpm/macros.php
 Summary:	Symfony2 HttpFoundation Component
 Name:		php-symfony2-HttpFoundation
 Version:	2.7.8
