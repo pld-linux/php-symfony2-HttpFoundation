@@ -2,12 +2,12 @@
 %define		php_min_version 5.3.9
 Summary:	Symfony2 HttpFoundation Component
 Name:		php-symfony2-HttpFoundation
-Version:	2.7.8
+Version:	2.8.52
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	https://github.com/symfony/%{package}/archive/v%{version}/%{package}-%{version}.tar.gz
-# Source0-md5:	8362d883d50168b11654cdaa49745d8e
+# Source0-md5:	3ba5ad9bab9783049457360aa550f903
 URL:		http://symfony.com/doc/current/components/http_foundation/index.html
 BuildRequires:	phpab
 BuildRequires:	rpmbuild(macros) >= 1.610
@@ -41,6 +41,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc CHANGELOG.md LICENSE README.md
 %dir %{php_data_dir}/Symfony/Component/HttpFoundation
 %{php_data_dir}/Symfony/Component/HttpFoundation/*.php
+%{php_data_dir}/Symfony/Component/HttpFoundation/Exception
 %{php_data_dir}/Symfony/Component/HttpFoundation/File
-%{php_data_dir}/Symfony/Component/HttpFoundation/Resources
 %{php_data_dir}/Symfony/Component/HttpFoundation/Session
